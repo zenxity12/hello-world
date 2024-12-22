@@ -1,0 +1,183 @@
+/* General Body and Layout Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #005f73;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar-nav .nav-link {
+  padding: 8px 20px;
+  font-size: 1.1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #003d47;
+}
+
+/* Hero Section Styling with Parallax and Image Background */
+header.hero-section {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("https://www.artfactory.in/product_pictures/Village-CP-111.jpg")
+      no-repeat center center;
+  background-size: cover; /* Ensures the image covers the entire section */
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+}
+
+header.hero-section h1 {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+header.hero-section p {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+header.hero-section .btn-primary {
+  background-color: #0077b6;
+  border-color: #0077b6;
+  padding: 12px 30px; /* Added padding to make the button larger */
+  font-size: 1.1rem; /* Slightly larger font */
+}
+
+header.hero-section .btn-primary:hover {
+  background-color: #005f73;
+  border-color: #005f73;
+}
+
+/* Tour Section Styling */
+/* Tour Section Styling */
+.tour-section {
+  padding: 100px 0;
+}
+
+.tour-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.tour-section .card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  transform-style: preserve-3d;
+  perspective: 1500px;
+  transition: transform 1s;
+}
+
+.tour-section .card {
+  width: 30%;
+  transform: rotateY(10deg);
+  transition: transform 0.5s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tour-section .card:hover {
+  transform: rotateY(0deg);
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tour-section .card-img-top {
+  height: 250px; /* Ensure all images have the same height */
+  object-fit: cover; /* Ensures images cover the area without stretching */
+}
+
+.tour-section .card-body {
+  padding: 20px;
+}
+
+.tour-section .card-title {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.tour-section .card-text {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* About Section Styling */
+.about-section {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+}
+
+.about-section p {
+  font-size: 1.25rem;
+  color: #666;
+}
+
+/* Contact Section Styling */
+.contact-section {
+  background-color: #e9ecef;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+}
+
+.contact-section p {
+  font-size: 1.25rem;
+  color: #666;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 30px 0;
+}
+
+/* Scroll Effect */
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/* Add Transition to Hover Effects for Better UX */
+.navbar-nav .nav-link,
+.tour-section .card,
+.btn-primary {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.navbar-nav .nav-link:hover {
+  color: #fff;
+  background-color: #003d47;
+}
+
+.tour-section .card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Hover */
+.btn-primary:hover {
+  background-color: #005f73;
+  border-color: #005f73;
+}

@@ -1,18 +1,265 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Village - Explore Our World</title>
 
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>my-first-website</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
 
-<body>
+    <style>
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Behind the content */
+      }
 
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" id="octocat" alt="octocat-gif" />
+      .video-section {
+        position: relative;
+        height: 100vh; /* Full height to fill the screen */
+      }
 
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<p>Welcome to your first GitHub Pages website!</p>
+      /* Hero Section Styling */
+      .hero-section {
+        position: relative;
+        color: #fff; /* Text color for better contrast on video */
+        text-align: center;
+        height: 100vh; /* Full screen */
+      }
 
-</body>
+      /* Adding text on top of the video */
+      .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2; /* Ensuring the text is on top of the video */
+        color: #fff;
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        text-align: center; /* Aligning text to the center */
+      }
+
+      .hero-text p {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-text .btn-primary {
+        background-color: #21b600;
+        border-color: #21b600;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        margin-top: 20px; /* Adding space above the button */
+      }
+
+      .hero-text .btn-primary:hover {
+        background-color: #005f73;
+        border-color: #005f73;
+      }
+
+      /* Tour Section Styles */
+      .tour-section .card-img-top {
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .tour-section .card {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .tour-section .card:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Animation Video Section -->
+    <div class="video-section">
+      <video class="video-background" autoplay muted loop>
+        <source src="image/animation.mp4" type="video/mp4" />
+        <!-- Fallback image if video is not supported -->
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Hero Section with 3D Effect -->
+      <div class="hero-text">
+        <h1>Welcome to Virtual Village</h1>
+        <p>Explore new worlds, meet people, and connect with ideas.</p>
+        <a href="#tour" class="btn btn-lg btn-primary"
+          >Start Your Virtual Tour</a
+        >
+      </div>
+    </div>
+
+    <!-- Navbar with Green Background and Larger Size -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top py-3">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+          <img
+            src="image/logo.png"
+            alt="Virtual Village Logo"
+            style="height: 60px; margin-right: 10px"
+          />
+          <!-- Increased logo size -->
+          Virtual Village
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tour">Virtual Tour</a>
+            </li>
+            <li class="nav-item"> 
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 3D Virtual Tour Section -->
+    <section id="tour" class="tour-section py-5">
+      <div class="container text-center">
+        <h2 class="mb-4" data-aos="fade-up">Take a Virtual Tour</h2>
+        <p class="lead mb-5" data-aos="fade-up" data-aos-delay="200">
+          Step into a new dimension where you can explore various virtual
+          environments, meet fascinating people, and immerse yourself in new
+          experiences.
+        </p>
+
+        <!-- 3D Rotating Cards -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" data-aos="zoom-in">
+            <div class="card h-100">
+              <img
+                src="image/Village1.webp"
+                alt="Nature Tour"
+                class="card-img-top"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Nature Adventure</h5>
+                <p class="card-text">
+                  Experience breathtaking landscapes and explore the beauty of
+                  nature.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-aos="zoom-in" data-aos-delay="600">
+            <div class="card h-100">
+              <img
+                src="image/Village2.webp"
+                alt="City Tour"
+                class="card-img-top"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5 class="card-title">City Exploration</h5>
+                <p class="card-text">
+                  Take a virtual walk through vibrant cities and discover new
+                  cultures.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in" data-aos-delay="800">
+            <div class="card h-100">
+              <img
+                src="image/Vilage3.jpg"
+                alt="Space Tour"
+                class="card-img-top"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Space Odyssey</h5>
+                <p class="card-text">
+                  Explore the cosmos and see distant galaxies in a whole new
+                  way.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section bg-light py-5">
+      <div class="container text-center">
+        <h2 class="mb-4" data-aos="fade-up">About Virtual Village</h2>
+        <p class="lead mb-5" data-aos="fade-up" data-aos-delay="200">
+          Virtual Village is a digital platform designed to connect people from
+          around the world. It offers immersive virtual experiences, including
+          tours, events, and interactive environments that bring communities
+          closer together.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-dark text-white">
+      <p>&copy; 2024 Virtual Village. All Rights Reserved.</p>
+      <div>
+        <a href="https://facebook.com" class="text-white mx-3" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://twitter.com" class="text-white mx-3" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://instagram.com" class="text-white mx-3" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- AOS JS for Scroll Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
